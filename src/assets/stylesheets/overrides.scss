@@ -1,0 +1,97 @@
+@import 'fonts.scss';
+@import 'variables.scss';
+
+body, #app {
+    min-height: 100%;
+    margin: 0;
+    background: $bg;
+    color: $primary;
+    font-family: Albert-Sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+.no-scroll {
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+  margin: $margin-lg 0;
+  font-weight: $font-bold;
+}
+
+input, textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.blog-post {
+
+    h2,
+    h3 {
+      margin-top: $margin;
+      margin-bottom: $margin-sm;
+    }
+
+    pre {
+      background: #08090a;
+      padding: $padding-lg;
+      overflow: auto;
+      font-family: monospace;
+      font-size: $font-size;
+
+      code {
+        .kd, .k {
+          color: #f39c12; 
+        }
+
+        .o {
+          color: #f9690e
+        }
+
+        .nx {
+          color: #7ed07e;
+        }
+
+        .c1 {
+          color: #808080;
+        }
+
+        .s1 {
+          color: #f2ca27;
+        }
+
+        .mi {
+          color: #dda0dd;
+        }
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: $secondary;
+    }
+
+    p {
+      color: $quaternary;
+      margin: $margin-sm 0;
+
+      img {
+        display: block;
+        margin: $margin auto;
+      }
+    }
+
+    .highlight__panel-action {
+      display: none;
+    }
+    
+    .js-fullscreen-code-action {
+      display: none;
+    }
+}
