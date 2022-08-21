@@ -6,7 +6,7 @@ import { useUIStore } from "@/stores/ui";
 const router = useRouter();
 const store = useUIStore();
 
-const links = ref(["about"]);
+const links = ref(["about", "blog", "contact"]);
 let pageScrolled = ref(false);
 
 const routeTo = (route) => {
@@ -86,7 +86,7 @@ onUnmounted(() => {
           <a
             v-for="link in links"
             :key="link"
-            @click="route(link)"
+            @click="routeTo(link)"
             class="router-link"
             :class="{ 'router-link-active': checkActiveRoute(link) }"
           >
