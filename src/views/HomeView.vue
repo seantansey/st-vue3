@@ -18,8 +18,8 @@
         <router-link :to="{ name: 'about' }" class="learn-more">
           Learn more
         </router-link>
-        <router-link :to="{ name: 'contact'}" class="contact">
-            Contact
+        <router-link :to="{ name: 'contact' }" class="contact">
+          Contact
         </router-link>
       </div>
     </div>

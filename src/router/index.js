@@ -1,4 +1,4 @@
-import { nextTick } from 'vue';
+import { nextTick } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 import { trackPageView } from "../utils/googleAnalytics";
 import HomeView from "../views/HomeView.vue";
@@ -8,9 +8,9 @@ import HomeView from "../views/HomeView.vue";
 // which is lazy-loaded when the route is visited.
 
 export const metaTitle = (str) => {
-  const capitalized = str.charAt(0).toUpperCase() + str.slice(1)
-  return `${capitalized} | seantansey.com`
-}
+  const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+  return `${capitalized} | seantansey.com`;
+};
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -49,11 +49,11 @@ const router = createRouter({
 });
 
 router.afterEach((to) => {
-  if (to.name !== 'blog-post') trackPageView(to.name, to.path || to.fullPath)
+  if (to.name !== "blog-post") trackPageView(to.name, to.path || to.fullPath);
 
   nextTick(() => {
-    document.title = metaTitle(to.name)
-  })
-})
+    document.title = metaTitle(to.name);
+  });
+});
 
 export default router;
