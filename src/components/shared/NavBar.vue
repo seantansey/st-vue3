@@ -51,7 +51,6 @@ onUnmounted(() => {
           <a @click="routeTo('home')" class="website-logo">
             <div class="website-logo-text-inner">ST</div>
           </a>
-          <div class="website-logo-text-outer">Development</div>
         </div>
         <div class="links">
           <router-link
@@ -59,6 +58,7 @@ onUnmounted(() => {
             :to="{ name: link }"
             :key="link"
             class="router-link"
+            :class="{ 'router-link-active': checkActiveRoute(link) }"
           >
             {{ link }}
           </router-link>
@@ -149,10 +149,6 @@ header {
           font-size: $font-size-lg;
           font-weight: $font-bold;
         }
-      }
-
-      .website-logo-text-outer {
-        margin-bottom: 3px;
       }
     }
 

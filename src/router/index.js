@@ -31,7 +31,7 @@ const router = createRouter({
       component: () => import("../views/ContactView.vue"),
     },
     {
-      path: "/blog",
+      path: "/blog/feed",
       name: "blog",
       component: () => import("../views/BlogFeedView.vue"),
     },

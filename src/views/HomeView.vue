@@ -8,7 +8,7 @@
       <div class="logo-square">
         <div class="logo-text">ST</div>
       </div>
-      <h1 class="text-1">Development</h1>
+      <h1 class="text-1">seantansey.com</h1>
       <p>
         Helping people turn their ideas into elegant and effective digital
         solutions.<br />

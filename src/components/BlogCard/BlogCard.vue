@@ -30,10 +30,7 @@ const tags = computed(() => {
 <template>
   <div class="blog-card">
     <div class="image-container">
-      <router-link
-        :to="{ name: 'blog-post', params: { id: slug } }"
-        class="router-link"
-      >
+      <router-link :to="{ name: 'blog-post', params: { id: slug } }">
         <img :src="img" />
       </router-link>
     </div>

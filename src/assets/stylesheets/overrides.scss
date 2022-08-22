@@ -51,7 +51,7 @@ input, textarea {
         }
 
         .nx {
-          color: #7ed07e;
+          color: $secondary;
         }
 
         .c1 {
@@ -71,6 +71,7 @@ input, textarea {
     img {
       max-width: 100%;
       height: auto;
+      margin-bottom: $margin-xs;
     }
 
     a {

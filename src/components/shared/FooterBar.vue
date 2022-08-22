@@ -52,7 +52,7 @@ footer {
   }
 
   a:hover {
-    color: $secondary;
+    color: $quaternary;
   }
 }
 </style>
