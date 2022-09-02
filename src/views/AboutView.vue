@@ -8,13 +8,13 @@ import AboutEducation from "../components/AboutEducation/AboutEducation.vue";
 
 <template>
   <PageTemplate>
-    <main class="about">
+    <section class="about">
       <h1><span class="fwd-slash">/</span>About</h1>
       <AboutIntroduction />
       <AboutExperience />
       <AboutSkills />
       <AboutEducation />
-    </main>
+    </section>
   </PageTemplate>
 </template>
 

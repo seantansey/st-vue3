@@ -5,7 +5,7 @@
       <div class="about-content">
         <h3>
           Hi, I'm Sean Tansey. A Fullstack Software Engineer specializing in
-          Frontend Development based out of Denver, Colorado.
+          Frontend Development.
         </h3>
         <p>I enjoy building solutions for complex problems.</p>
         <p>

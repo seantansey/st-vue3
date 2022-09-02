@@ -1,7 +1,7 @@
 export default {
   experiences: [
     {
-      company: "IHS Markit",
+      company: "S&P Global",
       positions: [
         {
           title: "Software Engineer",

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <main class="home">
     <font-awesome-icon
       class="background-icon"
       icon="fa-solid fa-circle-nodes"
@@ -23,7 +23,7 @@
         </router-link>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
@@ -90,6 +90,7 @@
       color: $tertiary;
       margin: $margin 0;
       padding: 0 $padding-xl;
+      font-size: $font-size-lg;
     }
 
     .button-row {

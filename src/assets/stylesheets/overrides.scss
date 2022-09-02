@@ -1,12 +1,13 @@
 @import 'fonts.scss';
 @import 'variables.scss';
 
-body, #app {
-    min-height: 100%;
+body {
+    min-width: 320px;
+    min-height: 100vh;
     margin: 0;
     background: $bg;
     color: $primary;
-    font-family: Albert-Sans;
+    font-family: Albert-Sans, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

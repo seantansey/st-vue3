@@ -5,7 +5,7 @@ import ContactForm from "../components/ContactForm/ContactForm.vue";
 
 <template>
   <PageTemplate>
-    <div class="contact">
+    <section class="contact">
       <h1><span class="fwd-slash">/</span>Contact</h1>
       <div class="flex-row">
         <div class="contact-info">
@@ -52,7 +52,7 @@ import ContactForm from "../components/ContactForm/ContactForm.vue";
           <ContactForm />
         </div>
       </div>
-    </div>
+    </section>
   </PageTemplate>
 </template>
 

@@ -14,50 +14,60 @@ defineProps({
 </script>
 
 <template>
-  <div class="page" :class="{ 'no-scroll': store.menuOpen }">
-    <NavBar />
-    <div class="page-content-container">
+  <div class="page-template" :class="{ 'no-scroll': store.menuOpen }">
+    <header>
+      <NavBar />
+    </header>
+    <div class="content">
       <img class="background-image" src="@/assets/img/circle-nodes-solid.svg" />
-      <div class="page-content">
-        <a v-if="backButton" class="back-button" @click="$router.back()">
-          <font-awesome-icon icon="fa-solid fa-chevron-left" size="sm" />
-          Back
-        </a>
-        <slot></slot>
-      </div>
+      <main>
+        <div class="page-content">
+          <a v-if="backButton" class="back-button" @click="$router.back()">
+            <font-awesome-icon icon="fa-solid fa-chevron-left" size="sm" />
+            Back
+          </a>
+          <slot></slot>
+        </div>
+      </main>
+      <footer>
+        <FooterBar />
+      </footer>
     </div>
-    <FooterBar />
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import "@/assets/stylesheets/variables.scss";
 
-.page {
+.page-template {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   position: relative;
 
-  .page-content-container {
+  header {
+    position: sticky;
+    top: 0;
+    background: $bg;
+    z-index: 1;
+  }
+
+  .content {
     position: relative;
     overflow: hidden;
-    flex: 1;
 
-    .background-image {
+     .background-image {
       position: absolute;
       height: 1600px;
       top: 64px;
       left: 50%;
       transform: translateX(-50%);
     }
-
     .page-content {
       position: relative;
       max-width: 1000px;
       margin: auto;
-      padding: 100px;
-      padding-top: $padding-xl;
+      padding: $padding-xl 100px 0;
       min-height: 100%;
 
       @media only screen and (max-width: $tablet-sm) {

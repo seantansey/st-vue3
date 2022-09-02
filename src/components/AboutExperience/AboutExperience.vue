@@ -59,10 +59,6 @@ const technologies = computed(() => {
         >
           <h3>{{ position.title }}</h3>
           <div class="job-dates">
-            <font-awesome-icon
-              icon="fa-solid fa-calendar"
-              class="job-date-icon"
-            />
             {{ formatDateString(position.start, position.end) }}
           </div>
         </div>
@@ -72,7 +68,7 @@ const technologies = computed(() => {
             :key="index"
           >
             <span class="bullet-point"
-              ><font-awesome-icon icon="fa-solid fa-chevron-right" size="sm"
+              ><font-awesome-icon icon="fa-solid fa-circle-nodes" size="xs"
             /></span>
             {{ highlight }}
           </li>
@@ -138,7 +134,7 @@ const technologies = computed(() => {
     .job-technologies {
       margin-top: $margin-xs;
       font-size: $font-size-sm;
-      color: $tertiary;
+      color: $quaternary;
       font-weight: $font-semibold;
     }
   }

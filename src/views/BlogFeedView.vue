@@ -17,12 +17,8 @@ onMounted(async () => {
     <section class="blog-feed">
       <h1><span class="fwd-slash">/</span>Blog</h1>
       <h3>
-        As a bootcamp/self taught developer I've struggled with some of the
-        deeper CS concepts. These simply weren't things I was taught when I
-        learned how to code. I became a strong practical programmer, but felt
-        foolish when trying to articulate issues with some of the more senior
-        dev's on my team. I've learned many new concepts along the way and below
-        is a collection of those lessons.
+        A collection of articles I've written on various web development concepts. 
+        Primarily created as notes for me to come back to, but you may find them useful as well.
       </h3>
       <div v-if="posts.length" class="blog-post-list">
         <p>
@@ -35,6 +31,7 @@ onMounted(async () => {
         <BlogCard
           v-for="post in posts"
           :key="post.id"
+          :created-at="post.created_at"
           :description="post.description"
           :img="post.social_image"
           :slug="post.slug"

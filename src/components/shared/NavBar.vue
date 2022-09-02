@@ -44,80 +44,71 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header>
-    <nav>
-      <div class="navbar" :class="{ 'navbar-shadow': pageScrolled }">
-        <div class="website-logo-wrapper">
-          <a @click="routeTo('home')" class="website-logo">
-            <div class="website-logo-text-inner">ST</div>
+  <nav>
+    <div class="navbar" :class="{ 'navbar-shadow': pageScrolled }">
+      <div class="website-logo-wrapper">
+        <a @click="routeTo('home')" class="website-logo">
+          <div class="website-logo-text-inner">ST</div>
+        </a>
+      </div>
+      <div class="links">
+        <router-link
+          v-for="link in links"
+          :to="{ name: link }"
+          :key="link"
+          class="router-link"
+          :class="{ 'router-link-active': checkActiveRoute(link) }"
+        >
+          {{ link }}
+        </router-link>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
+            <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
+          </a>
+          <a href="https://github.com/seantansey" target="_blank">
+            <font-awesome-icon icon="fa-brands fa-github" size="xl" />
+          </a>
+          <a href="https://dev.to/stansey92" target="_blank">
+            <font-awesome-icon icon="fa-brands fa-dev" size="xl" />
           </a>
         </div>
-        <div class="links">
-          <router-link
-            v-for="link in links"
-            :to="{ name: link }"
-            :key="link"
-            class="router-link"
-            :class="{ 'router-link-active': checkActiveRoute(link) }"
-          >
-            {{ link }}
-          </router-link>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
-              <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
-            </a>
-            <a href="https://github.com/seantansey" target="_blank">
-              <font-awesome-icon icon="fa-brands fa-github" size="xl" />
-            </a>
-            <a href="https://dev.to/stansey92" target="_blank">
-              <font-awesome-icon icon="fa-brands fa-dev" size="xl" />
-            </a>
-          </div>
-        </div>
-        <button v-if="store.menuOpen" class="menu-button" @click="closeMenu">
-          <font-awesome-icon icon="fa-solid fa-xmark" size="xl" />
-        </button>
-        <button v-else class="menu-button" @click="openMenu">
-          <font-awesome-icon icon="fa-solid fa-bars" size="xl" />
-        </button>
       </div>
-      <div v-if="store.menuOpen" class="navbar-extended">
-        <div class="menu-content">
-          <a
-            v-for="link in links"
-            :key="link"
-            @click="routeTo(link)"
-            class="router-link"
-            :class="{ 'router-link-active': checkActiveRoute(link) }"
-          >
-            {{ link }}
+      <button v-if="store.menuOpen" class="menu-button" @click="closeMenu">
+        <font-awesome-icon icon="fa-solid fa-xmark" size="xl" />
+      </button>
+      <button v-else class="menu-button" @click="openMenu">
+        <font-awesome-icon icon="fa-solid fa-bars" size="xl" />
+      </button>
+    </div>
+    <div v-if="store.menuOpen" class="navbar-extended">
+      <div class="menu-content">
+        <a
+          v-for="link in links"
+          :key="link"
+          @click="routeTo(link)"
+          class="router-link"
+          :class="{ 'router-link-active': checkActiveRoute(link) }"
+        >
+          {{ link }}
+        </a>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
+            <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
           </a>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
-              <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
-            </a>
-            <a href="https://github.com/seantansey" target="_blank">
-              <font-awesome-icon icon="fa-brands fa-github" size="xl" />
-            </a>
-            <a href="https://dev.to/stansey92" target="_blank">
-              <font-awesome-icon icon="fa-brands fa-dev" size="xl" />
-            </a>
-          </div>
+          <a href="https://github.com/seantansey" target="_blank">
+            <font-awesome-icon icon="fa-brands fa-github" size="xl" />
+          </a>
+          <a href="https://dev.to/stansey92" target="_blank">
+            <font-awesome-icon icon="fa-brands fa-dev" size="xl" />
+          </a>
         </div>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
 </template>
 
 <style lang="scss" scoped>
 @import "@/assets/stylesheets/variables.scss";
-
-header {
-  position: sticky;
-  top: 0;
-  font-weight: $font-semibold;
-  background: $bg;
-  z-index: 1;
 
   .navbar {
     display: flex;
@@ -127,6 +118,7 @@ header {
     height: 64px;
     padding-left: $padding;
     padding-right: $padding;
+    font-weight: $font-semibold;
 
     .website-logo-wrapper {
       display: flex;
@@ -214,6 +206,8 @@ header {
     height: calc(100vh - 65px);
     background: $bg;
     padding: $padding-lg;
+    font-weight: $font-semibold;
+
 
     @media only screen and (max-width: $tablet-sm) {
       display: flex;
@@ -282,5 +276,4 @@ header {
     content: " ";
     background: $secondary;
   }
-}
 </style>
