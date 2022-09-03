@@ -2,10 +2,10 @@
   <section class="about-introduction">
     <h2>Introduction</h2>
     <div class="flex-row">
-      <div class="about-content">
+      <div class="intro-content">
         <h3>
           Hi, I'm Sean Tansey. A Fullstack Software Engineer specializing in
-          Frontend Development.
+          Frontend Development based out of Denver, Colorado. 
         </h3>
         <p>I enjoy building solutions for complex problems.</p>
         <p>
@@ -17,16 +17,13 @@
         <p>
           Currently employed at
           <a href="https://ihsmarkit.com/index.html" target="_blank"
-            >IHS Markit</a
+            >S&P Global</a
           >, where I build and maintain UI's for multiple large clients in the
           financial industry.
         </p>
       </div>
-      <div class="about-image">
-        <img
-          class="profile-picture"
-          src="@/assets/img/galvanize-headshot.jpg"
-        />
+      <div class="intro-image">
+        <img src="@/assets/img/galvanize-headshot.jpg" />
       </div>
     </div>
   </section>
@@ -40,6 +37,8 @@
 
   h2 {
     font-size: $font-size-xl;
+    margin-top: 0;
+    margin-bottom: $margin;
   }
 
   .flex-row {
@@ -51,7 +50,7 @@
     }
   }
 
-  .about-content {
+  .intro-content {
     margin-right: $margin-lg;
     flex: 1;
 
@@ -79,13 +78,13 @@
     }
   }
 
-  .about-image {
+  .intro-image {
     flex: 1;
     text-align: center;
-    .profile-picture {
+
+    img {
       width: 100%;
       max-width: 400px;
-      background: $secondary;
     }
   }
 }

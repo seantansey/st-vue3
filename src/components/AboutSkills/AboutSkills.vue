@@ -20,7 +20,7 @@ const categories = computed(() => {
 
 <template>
   <section class="about-skills">
-    <h2>Skills</h2>
+    <h2>Skills & Technologies</h2>
     <MenuSelector
       :selectors="categories"
       :selected-index="selectedCategoryIndex"
@@ -62,7 +62,7 @@ const categories = computed(() => {
 
     i {
       display: block;
-      font-size: 80px;
+      font-size: $font-size-giant;
       padding: $padding-sm;
     }
 

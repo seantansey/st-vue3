@@ -4,10 +4,6 @@ import { ref } from "vue";
 const emit = defineEmits(["select"]);
 
 defineProps({
-  rightAlign: {
-    type: Boolean,
-    default: false,
-  },
   selectors: {
     type: Array,
     required: true,
@@ -32,7 +28,7 @@ const select = (index) => {
 
 <template>
   <div class="menu">
-    <div class="menu-desktop" :class="{ right: rightAlign }">
+    <div class="menu-desktop">
       <div class="menu-selector">
         <div
           v-for="(selector, index) in selectors"
@@ -104,58 +100,30 @@ const select = (index) => {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-weight: $font-bold;
+        font-weight: $font-semibold;
+        border-left: 2px solid transparent;
         transition: all 0.3s linear;
-        border-right: 3px solid $tertiary;
-        margin-right: 50px;
-        flex: 1;
         color: $tertiary;
         padding: $padding;
         white-space: pre;
-      }
 
-      .selector:hover {
-        cursor: pointer;
-        color: $primary;
-      }
+        &.selected {
+          color: $primary;
+          background: $bg-secondary;
+          border-left: 2px solid $secondary;
+          box-shadow: 0 1px 2px 0 rgba(black, 0.5);
+        }
 
-      .selector.selected {
-        flex: 2;
-        font-weight: $font-bold;
-        border-color: $secondary;
-        color: $primary;
+        &:hover {
+          cursor: pointer;
+          color: $primary;
+        }
       }
     }
 
     .menu-content {
       flex: 2;
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .menu-desktop.right {
-    flex-direction: row-reverse;
-
-    .menu-selector {
-      .selector {
-        border-right: none;
-        margin-right: 0;
-        border-left: 3px solid $tertiary;
-        margin-left: 50px;
-      }
-
-      .selector:hover {
-        cursor: pointer;
-        color: $primary;
-      }
-
-      .selector.selected {
-        flex: 2;
-        font-weight: $font-bold;
-        border-color: $secondary;
-        color: $primary;
-      }
+      margin-left: $margin-lg;
     }
   }
 
@@ -169,14 +137,16 @@ const select = (index) => {
 
     .menu-selector {
       display: flex;
-      flex: 1;
       justify-content: space-between;
       align-items: center;
-      font-weight: $font-bold;
-      border-bottom: 2px solid $secondary;
+      font-weight: $font-semibold;
       margin-bottom: $margin;
-      padding: $padding-sm;
+      padding: $padding-sm $padding;
       cursor: pointer;
+      color: $primary;
+      background: $bg-secondary;
+      border-left: 2px solid $secondary;
+      box-shadow: 0 1px 2px 0 rgba(black, 0.5);
 
       .icon {
         color: $tertiary;
@@ -193,24 +163,22 @@ const select = (index) => {
         display: flex;
         flex: 1;
         background: $bg;
-        padding: $padding-sm;
+        padding: $padding-sm $padding;
         color: $tertiary;
-        border-bottom: 1px solid $tertiary;
         font-weight: $font-bold;
         font-size: $font-size-sm;
-      }
 
-      .selector:last-child {
-        border-bottom: none;
-      }
+        &.selected {
+          border-left: 2px solid $secondary;
+          background: $bg-secondary;
+          color: $primary;
+        }
 
-      .selector.selected {
-        color: $primary;
-      }
-
-      .selector:hover {
-        cursor: pointer;
-        color: $primary;
+        &:hover {
+          cursor: pointer;
+          color: $primary;
+          background: $bg-secondary;
+        }
       }
     }
   }

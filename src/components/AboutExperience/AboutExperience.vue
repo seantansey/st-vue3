@@ -51,8 +51,8 @@ const technologies = computed(() => {
       :selectors="experiences"
       @select="selectExperience"
     >
-      <div class="job-content">
-        <div class="job-content-label">{{ selectedExperience.company }}</div>
+      <div class="experience-content">
+        <div class="experience-label">{{ selectedExperience.company }}</div>
         <div
           v-for="position in selectedExperience.positions"
           :key="position.title"
@@ -73,7 +73,7 @@ const technologies = computed(() => {
             {{ highlight }}
           </li>
         </ul>
-        <div v-if="technologies.length" class="job-content-label">
+         <div v-if="technologies.length" class="experience-label">
           Primary technologies
           <div class="job-technologies">{{ technologies }}</div>
         </div>
@@ -90,28 +90,24 @@ const technologies = computed(() => {
 
   h2 {
     font-size: $font-size-xl;
+    margin-top: 0;
+    margin-bottom: $margin;
   }
 
-  .job-content {
-    flex: 2;
+  .experience-content {
+    .experience-label {
+      color: $secondary;
+      font-weight: $font-bold;
+    }
 
     h3 {
       margin: $margin-xs 0;
-    }
-
-    .job-content-label {
-      color: $secondary;
-      font-weight: $font-bold;
     }
 
     .job-dates {
       color: $tertiary;
       font-size: $font-size-sm;
       font-weight: $font-semibold;
-
-      .job-date-icon {
-        margin-right: $margin-xs;
-      }
     }
 
     ul {

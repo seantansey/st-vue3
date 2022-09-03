@@ -18,8 +18,11 @@ body {
 }
 
 h1 {
-  margin: $margin-lg 0;
   font-weight: $font-bold;
+}
+
+p {
+  line-height: $font-size-lg;
 }
 
 input, textarea {
@@ -29,18 +32,33 @@ input, textarea {
 
 .blog-post {
 
-    h2,
+    h2 {
+      font-size: $font-size-xl;
+      margin: $margin 0;
+    }
+
     h3 {
-      margin-top: $margin;
-      margin-bottom: $margin-sm;
+      font-size: $font-size-lg;
+      margin: $margin 0 $margin-sm;
+    }
+
+    li {
+      margin: $margin 0;
+      color: $quaternary;
+      padding-left: $padding-sm;
+
+      &::marker {
+        color: $primary;
+      }
     }
 
     pre {
-      background: #08090a;
+      background: #090c13;
       padding: $padding-lg;
       overflow: auto;
       font-family: monospace;
       font-size: $font-size;
+      margin: $margin-lg;
 
       code {
         .kd, .k {
@@ -85,7 +103,7 @@ input, textarea {
 
       img {
         display: block;
-        margin: $margin auto;
+        margin: $margin-lg auto;
       }
     }
 

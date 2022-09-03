@@ -1,7 +1,7 @@
 export default {
   skills: [
     {
-      category: "Frontend\nDevelopment",
+      category: "Frontend Development",
       technologies: [
         ["JavaScript", "devicon-javascript-plain"],
         ["Vue", "devicon-vuejs-plain"],
@@ -14,7 +14,7 @@ export default {
       ],
     },
     {
-      category: "Backend\nDevelopment",
+      category: "Backend Development",
       technologies: [
         ["Node.js", "devicon-nodejs-plain"],
         ["Express", "devicon-express-original"],

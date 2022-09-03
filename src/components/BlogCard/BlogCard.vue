@@ -50,7 +50,7 @@ const date = computed(() => {
         :to="{ name: 'blog-post', params: { id: slug } }"
         class="router-link"
       >
-        <h2>{{ title }}</h2>
+        <h2><span class="fwd-slash">/</span>{{ title }}</h2>
       </router-link>
       <p class="description">{{ description }}</p>
       <p class="date">{{ date}}</p>
@@ -129,6 +129,11 @@ const date = computed(() => {
 
         &:hover {
           color: $secondary;
+        }
+
+        .fwd-slash {
+          color: $secondary;
+          margin-right: $margin-xs;
         }
       }
     }

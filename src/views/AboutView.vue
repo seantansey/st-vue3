@@ -1,9 +1,8 @@
 <script setup>
 import PageTemplate from "../components/shared/PageTemplate.vue";
 import AboutIntroduction from "../components/AboutIntroduction/AboutIntroduction.vue";
-import AboutExperience from "../components/AboutExperience/AboutExperience.vue";
 import AboutSkills from "../components/AboutSkills/AboutSkills.vue";
-import AboutEducation from "../components/AboutEducation/AboutEducation.vue";
+import AboutBackground from "../components/AboutBackground/AboutBackground.vue";
 </script>
 
 <template>
@@ -11,9 +10,8 @@ import AboutEducation from "../components/AboutEducation/AboutEducation.vue";
     <section class="about">
       <h1><span class="fwd-slash">/</span>About</h1>
       <AboutIntroduction />
-      <AboutExperience />
+      <AboutBackground />
       <AboutSkills />
-      <AboutEducation />
     </section>
   </PageTemplate>
 </template>
