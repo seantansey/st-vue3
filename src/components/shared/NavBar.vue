@@ -10,8 +10,8 @@ const links = ref(["about", "blog", "contact"]);
 let pageScrolled = ref(false);
 
 const routeTo = (route) => {
-  router.push({ name: route });
   closeMenu();
+  router.push({ name: route });
   if (route === 'home') store.hideNavbar()
 };
 
@@ -71,47 +71,49 @@ onUnmounted(() => {
         <a class="download-button" href="/Sean_Tansey_Web_Resume.pdf" download>Resume</a>
         <div class="social-links">
           <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
-            <font-awesome-icon icon="fa-brands fa-linkedin-in" size="xl" />
+            <font-awesome-icon icon="fa-brands fa-linkedin-in" size="lg" />
           </a>
           <a href="https://github.com/seantansey" target="_blank">
-            <font-awesome-icon icon="fa-brands fa-github" size="xl" />
+            <font-awesome-icon icon="fa-brands fa-github" size="lg" />
           </a>
           <a href="https://dev.to/stansey92" target="_blank">
-            <font-awesome-icon icon="fa-brands fa-dev" size="xl" />
+            <font-awesome-icon icon="fa-brands fa-dev" size="lg" />
           </a>
         </div>
       </div>
-      <button v-if="store.menuOpen" class="menu-button" @click="closeMenu">
+      <button v-if="store.menuOpen" class="menu-button close-x" @click="closeMenu">
         <font-awesome-icon icon="fa-solid fa-xmark" size="xl" />
       </button>
       <button v-else class="menu-button" @click="openMenu">
         <font-awesome-icon icon="fa-solid fa-bars" size="xl" />
       </button>
     </div>
-    <div v-if="store.menuOpen" class="navbar-extended">
-      <div class="menu-content">
-        <a
-          v-for="link in links"
-          :key="link"
-          @click="routeTo(link)"
-          class="router-link"
-          :class="{ 'router-link-active': checkActiveRoute(link) }"
-        >
-          {{ link }}
-        </a>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
-            <font-awesome-icon icon="fa-brands fa-linkedin-in" size="xl" />
+    <transition name="slide-fade">
+      <div v-if="store.menuOpen" class="navbar-extended">
+        <div class="menu-content">
+          <a
+            v-for="link in links"
+            :key="link"
+            @click="routeTo(link)"
+            class="router-link"
+            :class="{ 'router-link-active': checkActiveRoute(link) }"
+          >
+            {{ link }}
           </a>
-          <a href="https://github.com/seantansey" target="_blank">
-            <font-awesome-icon icon="fa-brands fa-github" size="xl" />
-          </a>
-          <a href="https://dev.to/stansey92" target="_blank">
-            <font-awesome-icon icon="fa-brands fa-dev" size="xl" />
-          </a>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
+              <font-awesome-icon icon="fa-brands fa-linkedin-in" size="lg" />
+            </a>
+            <a href="https://github.com/seantansey" target="_blank">
+              <font-awesome-icon icon="fa-brands fa-github" size="lg" />
+            </a>
+            <a href="https://dev.to/stansey92" target="_blank">
+              <font-awesome-icon icon="fa-brands fa-dev" size="lg" />
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </transition>
   </nav>
 </template>
 
@@ -188,7 +190,7 @@ onUnmounted(() => {
         height: 32px;
         font-size: $font-size-sm;
         color: $secondary;
-        opacity: 0.7;
+        opacity: 0.8;
         padding: 0 $padding;
         border: 1px solid $secondary;
         margin-right: $margin-xs;
@@ -238,6 +240,10 @@ onUnmounted(() => {
         opacity: 1;
       }
     }
+
+    .close-x {
+      animation: spin .2s ease-in;
+    }
   }
 
   .navbar-shadow {
@@ -283,7 +289,6 @@ onUnmounted(() => {
             opacity: 1;
           }
         }
-
       }
     }
   }
@@ -315,17 +320,17 @@ onUnmounted(() => {
   .router-link-active {
     color: $primary;
     position: relative;
-  }
-  .router-link-active::after {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    height: 1px;
-    width: 100%;
-    content: " ";
-    background: $secondary;
-  }
 
+     &::after {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        content: " ";
+        background: $secondary;
+      }
+  }
 
 .fade-in {
   animation: fadeIn 2s ease-in;
@@ -341,5 +346,27 @@ onUnmounted(() => {
   100% { 
     opacity: 1 
   }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(90deg);
+    opacity: 1;
+  }
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.12s ease-in;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 </style>

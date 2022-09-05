@@ -10,7 +10,7 @@ export default {
         ["HTML", "devicon-html5-plain colored"],
         ["CSS", "devicon-css3-plain colored"],
         ["Sass", "devicon-sass-plain colored"],
-        ["Tailwind", "devicon-tailwindcss-original-wordmark colored"],
+        ["Tailwind", "devicon-tailwindcss-plain colored"],
       ],
     },
     {
@@ -23,7 +23,7 @@ export default {
         ["Ruby on Rails", "devicon-rails-plain colored"],
         ["MySQL", "devicon-mysql-plain colored"],
         ["PostgreSQL", "devicon-postgresql-plain colored"],
-        [".NET", "devicon-dot-net-plain-wordmark colored"],
+        [".NET", "devicon-dot-net-plain colored"],
       ],
     },
     {
@@ -34,7 +34,7 @@ export default {
         ["Google Analytics", "devicon-google-plain colored"],
         ["Prometheus", "devicon-prometheus-original colored"],
         ["NGINX", "devicon-nginx-original colored"],
-        ["DigitalOcean", "devicon-digitalocean-plain-wordmark colored"],
+        ["DigitalOcean", "devicon-digitalocean-plain colored"],
         ["Github", "devicon-github-original"],
         ["VS Code", "devicon-vscode-plain colored"],
       ],

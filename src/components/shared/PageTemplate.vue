@@ -20,7 +20,7 @@ defineProps({
     </header>
     <div class="content-container">
       <img class="background-image" src="@/assets/img/circle-nodes-solid.svg" />
-      <transition name="slide-fade" appear>
+      <transition name="fade" appear>
         <div class="page-transition-container">
           <main>
             <div class="page-content">
@@ -63,6 +63,7 @@ defineProps({
       top: $navbar-height;
       left: 50%;
       transform: translateX(-50%);
+      z-index: -1;
     }
 
     .page-transition-container {
@@ -112,17 +113,13 @@ defineProps({
   }
 }
 
-.slide-fade-enter-active {
-  transition: all 0.4s ease-in;
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease-in;
 }
 
-.slide-fade-leave-active {
-  transition: all 0.4s ease-in;
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 </style>

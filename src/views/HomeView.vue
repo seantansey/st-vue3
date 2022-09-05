@@ -173,15 +173,11 @@
         text-align: center;
         margin: $margin $margin-sm;
         font-size: $font-size;
-        font-weight: $font-bold;
+        font-weight: $font-medium;
         border: none;
         padding: $padding-xs $padding;
         text-decoration: none;
-      }
-
-      a:hover {
-        cursor: pointer;
-      }
+      }     
 
       .learn-more {
         border: 1px solid $secondary;
@@ -204,7 +200,6 @@
           opacity: 1;
           background: $button-secondary-bg-hover;
         }
-
       }
     }
   }

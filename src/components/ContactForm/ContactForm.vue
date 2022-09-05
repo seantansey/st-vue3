@@ -125,7 +125,7 @@ const submitForm = async () => {
     textarea {
       background: transparent;
       border: none;
-      border-bottom: 1px solid #334155;
+      border-bottom: 1px solid $border-color;
       outline: none;
       color: $primary;
       padding: $padding-xs $padding-sm;
@@ -136,7 +136,7 @@ const submitForm = async () => {
     textarea {
       font-family: inherit;
       min-height: 200px;
-      border: 1px solid #334155;
+      border: 1px solid $border-color;
     }
 
     ::placeholder {
@@ -197,6 +197,7 @@ const submitForm = async () => {
     height: 32px;
     border: 1px solid $secondary;
     opacity: 0.7;
+    font-weight: $font-medium;
 
     &:hover {
       opacity: 1;
