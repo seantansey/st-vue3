@@ -100,8 +100,8 @@ const select = (index) => {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-weight: $font-semibold;
-        border-left: 2px solid transparent;
+        font-weight: $font-medium;
+        border-right: 2px solid $tertiary;
         transition: all 0.3s linear;
         color: $tertiary;
         padding: $padding;
@@ -110,7 +110,7 @@ const select = (index) => {
         &.selected {
           color: $primary;
           background: $bg-secondary;
-          border-left: 2px solid $secondary;
+          border-right: 2px solid $secondary;
           box-shadow: 0 1px 2px 0 rgba(black, 0.5);
         }
 
@@ -139,13 +139,13 @@ const select = (index) => {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-weight: $font-semibold;
+      font-weight: $font-medium;
       margin-bottom: $margin;
       padding: $padding-sm $padding;
       cursor: pointer;
       color: $primary;
       background: $bg-secondary;
-      border-left: 2px solid $secondary;
+      border-left: 1px solid $secondary;
       box-shadow: 0 1px 2px 0 rgba(black, 0.5);
 
       .icon {
@@ -165,11 +165,11 @@ const select = (index) => {
         background: $bg;
         padding: $padding-sm $padding;
         color: $tertiary;
-        font-weight: $font-bold;
+        font-weight: $font-medium;
         font-size: $font-size-sm;
 
         &.selected {
-          border-left: 2px solid $secondary;
+          border-left: 1px solid $secondary;
           background: $bg-secondary;
           color: $primary;
         }

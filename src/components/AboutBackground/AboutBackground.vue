@@ -42,7 +42,7 @@ const backgroundNodes = computed(() => {
   h2 {
     font-size: $font-size-xl;
     margin-top: 0;
-    margin-bottom: $margin;
+    margin-bottom: $margin-lg;
   }
 
   .node {
@@ -105,7 +105,7 @@ const backgroundNodes = computed(() => {
                 white-space: nowrap;
                 font-size: $font-size-sm;
                 color: $quaternary;
-                font-weight: $font-semibold;
+                font-weight: $font-medium;
 
                 @media only screen and (max-width: $tablet-sm) {
                     display: none;
@@ -119,7 +119,7 @@ const backgroundNodes = computed(() => {
                 white-space: nowrap;
                 font-size: $font-size-sm;
                 color: $quaternary;
-                font-weight: $font-semibold;
+                font-weight: $font-medium;
 
                 @media only screen and (max-width: $tablet-sm) {
                     display: none;
@@ -158,7 +158,7 @@ const backgroundNodes = computed(() => {
                 margin: $margin-xs 0 $margin-sm;
                 color: $tertiary;
                 font-size: $font-size-sm;
-                font-weight: $font-semibold;
+                font-weight: $font-medium;
             }
         }
     

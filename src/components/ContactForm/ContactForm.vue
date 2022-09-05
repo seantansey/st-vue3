@@ -114,6 +114,7 @@ const submitForm = async () => {
       font-size: $font-size-xs;
       margin-bottom: $margin-xs;
       font-weight: $font-bold;
+      color: $quaternary;
     }
 
     textarea + label {
@@ -129,11 +130,11 @@ const submitForm = async () => {
       color: $primary;
       padding: $padding-xs $padding-sm;
       resize: none;
+      font-size: $font-size-sm;
     }
 
     textarea {
       font-family: inherit;
-      font-size: $font-size-sm;
       min-height: 200px;
       border: 1px solid #334155;
     }
@@ -186,23 +187,30 @@ const submitForm = async () => {
   }
 
   button {
-    color: $white;
-    background: $secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $secondary;
+    background: transparent;
     font-size: $font-size-sm;
-    font-weight: $font-semibold;
-    border: none;
-    padding: $padding-xs $padding;
-    transition: background 0.3s;
-  }
+    padding: 0 $padding;
+    height: 32px;
+    border: 1px solid $secondary;
+    opacity: 0.7;
 
-  button:hover {
-    background: $secondary-hover;
-    cursor: pointer;
-  }
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+      background: $button-secondary-bg-hover;
+    }
 
-  button:disabled {
-    background: $tertiary;
-    cursor: not-allowed;
+    &:disabled {
+      opacity: 1;
+      color: $tertiary;
+      border-color: $tertiary;
+      background: transparent;
+      cursor: not-allowed;
+    }
   }
 }
 </style>

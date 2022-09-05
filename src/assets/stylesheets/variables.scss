@@ -27,7 +27,7 @@ $font-size-giant: rem-calc(60);
 
 // font-weight
 $font-regular: 400;
-$font-semibold: 600;
+$font-medium: 500;
 $font-bold: 700;
 
 // margins
@@ -44,6 +44,9 @@ $padding: rem-calc(20);
 $padding-lg: rem-calc(30);
 $padding-xl: rem-calc(60);
 
+// constants
+$navbar-height: 60px;
+
 // colors
 $primary: #e5e7eb; //tailwind gray 200
 $secondary: #10b981; //tailwind emerald 500
@@ -55,4 +58,6 @@ $error: #ef4444; //tailwind red 500;
 $bg: #111827; //tailwind gray 900
 $bg-secondary: #1f2937; //tailwind gray 800
 $border-color: #374151;
-$secondary-hover: #0ea674;
+$button-primary-bg: #0ea674;
+$button-secondary-bg-hover: #10b98108;
+

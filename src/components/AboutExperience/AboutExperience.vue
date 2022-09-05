@@ -107,7 +107,7 @@ const technologies = computed(() => {
     .job-dates {
       color: $tertiary;
       font-size: $font-size-sm;
-      font-weight: $font-semibold;
+      font-weight: $font-medium;
     }
 
     ul {
@@ -131,7 +131,7 @@ const technologies = computed(() => {
       margin-top: $margin-xs;
       font-size: $font-size-sm;
       color: $quaternary;
-      font-weight: $font-semibold;
+      font-weight: $font-medium;
     }
   }
 }

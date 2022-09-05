@@ -127,6 +127,10 @@ const date = computed(() => {
           margin-bottom: 0;
         }
 
+        @media only screen and (max-width: $mobile) {
+          font-size: $font-size-lg;
+        }
+
         &:hover {
           color: $secondary;
         }
@@ -171,7 +175,7 @@ const date = computed(() => {
 
     .tags {
       font-size: $font-size-sm;
-      font-weight: $font-semibold;
+      font-weight: $font-medium;
       color: $secondary;
       margin: 0;
     }

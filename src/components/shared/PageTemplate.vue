@@ -18,20 +18,24 @@ defineProps({
     <header>
       <NavBar />
     </header>
-    <div class="content">
+    <div class="content-container">
       <img class="background-image" src="@/assets/img/circle-nodes-solid.svg" />
-      <main>
-        <div class="page-content">
-          <a v-if="backButton" class="back-button" @click="$router.back()">
-            <font-awesome-icon icon="fa-solid fa-chevron-left" size="sm" />
-            Back
-          </a>
-          <slot></slot>
+      <transition name="slide-fade" appear>
+        <div class="page-transition-container">
+          <main>
+            <div class="page-content">
+              <a v-if="backButton" class="back-button" @click="$router.back()">
+                <font-awesome-icon icon="fa-solid fa-chevron-left" size="sm" />
+                Back
+              </a>
+                  <slot></slot>
+            </div>
+          </main>
+          <footer>
+            <FooterBar />
+          </footer>
         </div>
-      </main>
-      <footer>
-        <FooterBar />
-      </footer>
+      </transition>
     </div>
   </div>
 </template>
@@ -40,9 +44,6 @@ defineProps({
 @import "@/assets/stylesheets/variables.scss";
 
 .page-template {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   position: relative;
 
   header {
@@ -52,55 +53,76 @@ defineProps({
     z-index: 1;
   }
 
-  .content {
+  .content-container {
     position: relative;
     overflow: hidden;
 
      .background-image {
       position: absolute;
       height: 1600px;
-      top: 64px;
+      top: $navbar-height;
       left: 50%;
       transform: translateX(-50%);
     }
-    .page-content {
-      position: relative;
-      max-width: 1000px;
-      margin: auto;
-      padding: $padding-xl 100px 0;
-      min-height: 100%;
 
-      @media only screen and (max-width: $tablet-sm) {
-        padding-left: 50px;
-        padding-right: 50px;
-      }
-
-      @media only screen and (max-width: $mobile) {
-        padding-left: $padding;
-        padding-right: $padding;
-      }
-
-      .back-button {
-        position: absolute;
-        top: 40px;
-        left: 100px;
-        color: $secondary;
-        text-decoration: none;
-        font-weight: $font-semibold;
-
+    .page-transition-container {
+      .page-content {
+        position: relative;
+        max-width: 1000px;
+        margin: auto;
+        padding: $padding-xl 100px;
+        min-height: calc(100vh - 300px);
+  
         @media only screen and (max-width: $tablet-sm) {
-          left: 50px;
+          padding-left: 50px;
+          padding-right: 50px;
         }
-
+  
         @media only screen and (max-width: $mobile) {
-          left: 20px;
+          padding-left: $padding;
+          padding-right: $padding;
         }
-      }
-
-      .back-button:hover {
-        cursor: pointer;
+  
+        .back-button {
+          position: absolute;
+          top: 40px;
+          left: 100px;
+          color: $secondary;
+          text-decoration: none;
+          font-weight: $font-medium;
+  
+          @media only screen and (max-width: $tablet-sm) {
+            left: 50px;
+          }
+  
+          @media only screen and (max-width: $mobile) {
+            left: 20px;
+          }
+        }
+  
+        .back-button:hover {
+          cursor: pointer;
+        }
+  
+        .slot-wrapper {
+          position: relative;
+        }
       }
     }
   }
+}
+
+.slide-fade-enter-active {
+  transition: all 0.4s ease-in;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.4s ease-in;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>

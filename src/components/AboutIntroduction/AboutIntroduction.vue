@@ -23,7 +23,7 @@
         </p>
       </div>
       <div class="intro-image">
-        <img src="@/assets/img/galvanize-headshot.jpg" />
+        <img src="@/assets/img/denver_headshot.jpg" />
       </div>
     </div>
   </section>
@@ -38,7 +38,7 @@
   h2 {
     font-size: $font-size-xl;
     margin-top: 0;
-    margin-bottom: $margin;
+    margin-bottom: $margin-lg;
   }
 
   .flex-row {

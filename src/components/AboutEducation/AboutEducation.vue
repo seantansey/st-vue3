@@ -69,7 +69,7 @@ const schools = computed(() => {
   .education-data {
     font-size: $font-size-sm;
     color: $tertiary;
-    font-weight: $font-semibold;
+    font-weight: $font-medium;
 
     .education-data-text {
       margin: 0 $margin-sm;

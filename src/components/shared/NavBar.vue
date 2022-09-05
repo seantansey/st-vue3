@@ -12,11 +12,14 @@ let pageScrolled = ref(false);
 const routeTo = (route) => {
   router.push({ name: route });
   closeMenu();
+  if (route === 'home') store.hideNavbar()
 };
 
 const closeMenu = () => store.closeMenu();
 
 const openMenu = () => store.openMenu();
+
+const showNavbar = () => setTimeout(() => store.showNavbar(), 2500);
 
 const checkActiveRoute = (route) => {
   const { path, name } = router.currentRoute.value;
@@ -33,6 +36,8 @@ const handleResize = () => {
 };
 
 onMounted(() => {
+  if (!store.navbarVisible) showNavbar()
+
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("resize", handleResize);
 });
@@ -44,26 +49,29 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <nav>
+  <nav :class="{ 'fade-in': !store.navbarVisible }">
     <div class="navbar" :class="{ 'navbar-shadow': pageScrolled }">
-      <div class="website-logo-wrapper">
-        <a @click="routeTo('home')" class="website-logo">
-          <div class="website-logo-text-inner">ST</div>
-        </a>
-      </div>
-      <div class="links">
+      <div class="navbar-left">
+        <div class="website-logo-wrapper">
+          <a @click="routeTo('home')" class="website-logo">
+            <div class="website-logo-text-inner">ST</div>
+          </a>
+        </div>
         <router-link
           v-for="link in links"
           :to="{ name: link }"
           :key="link"
-          class="router-link"
+          class="router-link site-link"
           :class="{ 'router-link-active': checkActiveRoute(link) }"
         >
           {{ link }}
         </router-link>
+      </div>
+      <div class="navbar-right">
+        <a class="download-button" href="/Sean_Tansey_Web_Resume.pdf" download>Resume</a>
         <div class="social-links">
           <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
-            <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
+            <font-awesome-icon icon="fa-brands fa-linkedin-in" size="xl" />
           </a>
           <a href="https://github.com/seantansey" target="_blank">
             <font-awesome-icon icon="fa-brands fa-github" size="xl" />
@@ -93,7 +101,7 @@ onUnmounted(() => {
         </a>
         <div class="social-links">
           <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
-            <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
+            <font-awesome-icon icon="fa-brands fa-linkedin-in" size="xl" />
           </a>
           <a href="https://github.com/seantansey" target="_blank">
             <font-awesome-icon icon="fa-brands fa-github" size="xl" />
@@ -115,81 +123,120 @@ onUnmounted(() => {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
+    height: $navbar-height;
     padding-left: $padding;
     padding-right: $padding;
-    font-weight: $font-semibold;
+    font-weight: $font-medium;
 
-    .website-logo-wrapper {
+    .navbar-left {
       display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-      .website-logo {
-        height: 40px;
-        width: 40px;
-        border: 2px solid $secondary;
-        text-decoration: none;
-        position: relative;
-        margin-right: $margin-sm;
-        cursor: pointer;
+      justify-content: center;
+      align-items: center;
 
-        .website-logo-text-inner {
-          color: $secondary;
-          position: absolute;
-          bottom: 0;
-          right: 5px;
-          font-size: $font-size-lg;
-          font-weight: $font-bold;
+      .website-logo-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        margin-right: $margin-lg;
+        .website-logo {
+          height: 40px;
+          width: 40px;
+          border: 2px solid $secondary;
+          text-decoration: none;
+          position: relative;
+          margin-right: $margin-sm;
+          cursor: pointer;
+
+          &:hover {
+            background: $button-secondary-bg-hover;
+          }
+
+          .website-logo-text-inner {
+            color: $secondary;
+            position: absolute;
+            bottom: 0;
+            right: 5px;
+            font-size: $font-size-lg;
+            font-weight: $font-bold;
+          }
+        }
+      }
+
+      .site-link {
+        height: $navbar-height;
+
+        @media only screen and (max-width: $tablet-sm) {
+          display: none;
         }
       }
     }
 
-    .links {
-      height: 64px;
+    .navbar-right {
       display: flex;
+      justify-content: center;
       align-items: center;
-      margin-left: $margin;
-      text-transform: capitalize;
+      margin-right: $margin-sm;
 
       @media only screen and (max-width: $tablet-sm) {
         display: none;
       }
-    }
 
-    .social-links {
-      display: flex;
-      justify-content: space-between;
-
-      a {
-        color: $tertiary;
+      .download-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        font-size: $font-size-sm;
+        color: $secondary;
+        opacity: 0.7;
+        padding: 0 $padding;
+        border: 1px solid $secondary;
+        margin-right: $margin-xs;
         text-decoration: none;
-        margin-left: $margin-lg;
+
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+          background: $button-secondary-bg-hover;
+        }
       }
 
-      a:first-child {
-        margin-left: $margin;
-      }
+      .social-links {
+        display: flex;
+        justify-content: space-between;
 
-      a:hover {
-        color: $quaternary;
+        a {
+          text-decoration: none;
+          margin-left: $margin-lg;
+          color: $quaternary;
+          opacity: 0.6;
+
+          &:first-child {
+            margin-left: $margin;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
     }
 
     .menu-button {
       display: none;
-      border: none;
-      background: none;
-      color: $secondary;
-      border: 1px solid $bg;
-      transition: border-color 1s;
 
       @media only screen and (max-width: $tablet-sm) {
         display: block;
+        border: none;
+        background: none;
+        color: $quaternary;
+        opacity: 0.6;
       }
-    }
 
-    .menu-button:hover {
-      cursor: pointer;
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
     }
   }
 
@@ -206,7 +253,7 @@ onUnmounted(() => {
     height: calc(100vh - 65px);
     background: $bg;
     padding: $padding-lg;
-    font-weight: $font-semibold;
+    font-weight: $font-medium;
 
 
     @media only screen and (max-width: $tablet-sm) {
@@ -228,13 +275,15 @@ onUnmounted(() => {
         justify-content: space-between;
 
         a {
-          color: $tertiary;
+          color: $quaternary;
+          opacity: 0.6;
           text-decoration: none;
+
+          &:hover {
+            opacity: 1;
+          }
         }
 
-        a:hover {
-          color: $secondary;
-        }
       }
     }
   }
@@ -243,12 +292,11 @@ onUnmounted(() => {
     display: flex;
     align-items: center;
     height: 100%;
+    font-size: $font-size-sm;
     text-decoration: none;
-    color: $tertiary;
+    color: $quaternary;
     margin-left: $margin-sm;
     padding: 0 $padding;
-    transition: color 0.3s;
-    font-size: $font-size-sm;
     cursor: pointer;
     text-transform: capitalize;
 
@@ -257,11 +305,12 @@ onUnmounted(() => {
       padding: $padding-sm 0;
       border-bottom: 1px solid $tertiary;
     }
+
+    &:hover {
+      color: $primary;
+    }
   }
 
-  .router-link:hover {
-    color: $primary;
-  }
 
   .router-link-active {
     color: $primary;
@@ -269,11 +318,28 @@ onUnmounted(() => {
   }
   .router-link-active::after {
     position: absolute;
-    bottom: -2px;
+    bottom: -1px;
     left: 0;
-    height: 2px;
+    height: 1px;
     width: 100%;
     content: " ";
     background: $secondary;
   }
+
+
+.fade-in {
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+  }
+  25% {
+    opacity: 0;
+  }
+  100% { 
+    opacity: 1 
+  }
+}
 </style>

@@ -33,7 +33,7 @@ const categories = computed(() => {
           :key="skill[0]"
           class="skill"
         >
-          <i :class="skill[1]" class="colored"></i>
+          <i :class="skill[1]"></i>
           {{ skill[0] }}
         </div>
       </div>
@@ -49,6 +49,7 @@ const categories = computed(() => {
 
   h2 {
     font-size: $font-size-xl;
+    margin-bottom: $margin-lg;
   }
 
   .logo-row {
@@ -56,7 +57,7 @@ const categories = computed(() => {
     justify-content: space-around;
     flex-wrap: wrap;
     text-align: center;
-    font-weight: $font-bold;
+    font-weight: $font-medium;
     font-size: $font-size-sm;
     color: $quaternary;
 

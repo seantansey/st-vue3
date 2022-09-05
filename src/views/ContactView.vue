@@ -20,7 +20,7 @@ import ContactForm from "../components/ContactForm/ContactForm.vue";
             target="_blank"
           >
             <font-awesome-icon
-              icon="fa-brands fa-linkedin"
+              icon="fa-brands fa-linkedin-in"
               size="xl"
               class="social-icon"
             />
@@ -95,18 +95,19 @@ import ContactForm from "../components/ContactForm/ContactForm.vue";
     display: flex;
     align-items: center;
     margin-bottom: $margin-sm;
-    color: $tertiary;
+    color: $quaternary;
+    opacity: .6;
     font-size: $font-size;
 
+    &:hover {
+      opacity: 1;
+    }
+
     .social-icon {
-      margin-right: $margin-sm;
+      margin-right: $margin;
     }
   }
 
-  a:hover {
-    color: $secondary;
-    text-decoration: underline;
-  }
 
   .contact-form-wrapper {
     flex: 1;
