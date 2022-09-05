@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <p>This site was built using Vue, NGINX, Node.js, Express and PostgreSQL</p>
-    <p><router-link :to="{ name: 'home' }">seantansey.com</router-link> designed & developed Sean Tansey </p>
+    <p><router-link :to="{ name: 'home' }">seantansey.com</router-link> designed & developed by Sean Tansey</p>
     <div class="social-wrapper">
       <router-link :to="{ name: 'contact' }">
         <font-awesome-icon icon="fa-solid fa-envelope" size="lg" />
