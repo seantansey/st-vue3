@@ -69,7 +69,7 @@ defineProps({
     .page-transition-container {
       .page-content {
         position: relative;
-        max-width: 1000px;
+        max-width: $max-width;
         margin: auto;
         padding: $padding-xxl;
         min-height: calc(100vh - 300px);
