@@ -19,7 +19,8 @@ body {
 
 h1 {
   font-weight: $font-bold;
-  margin: $margin-lg 0;
+  margin-top: 0;
+  margin-bottom: $margin-lg;
 }
 
 p {
