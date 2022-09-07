@@ -53,6 +53,7 @@ const submitForm = async () => {
         type="text"
         placeholder="John Doe"
         :class="{ complete: formData.name }"
+        maxlength="100"
       />
       <label>Name</label>
     </div>
@@ -62,6 +63,7 @@ const submitForm = async () => {
         type="email"
         placeholder="john.doe@example.com"
         :class="{ complete: formData.email }"
+        maxlength="100"
       />
       <label>Email</label>
     </div>
@@ -71,6 +73,7 @@ const submitForm = async () => {
         type="text"
         placeholder="Subject"
         :class="{ complete: formData.subject }"
+        maxlength="100"
       />
       <label>Subject</label>
     </div>
