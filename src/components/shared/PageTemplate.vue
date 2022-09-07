@@ -75,7 +75,7 @@ defineProps({
         min-height: calc(100vh - 300px);
   
         @media only screen and (max-width: $tablet-sm) {
-          padding: $padding-lg $padding-xl;
+          padding: $padding-xl;
         }
   
         @media only screen and (max-width: $mobile) {
@@ -85,13 +85,14 @@ defineProps({
   
         .back-button {
           position: absolute;
-          top: $margin-xl;
+          top: rem-calc(40);
           left: $margin-xxl;
           color: $secondary;
           text-decoration: none;
           font-weight: $font-medium;
   
           @media only screen and (max-width: $tablet-sm) {
+            top: $margin;
             left: $margin-xl;
           }
   
