@@ -71,12 +71,11 @@ defineProps({
         position: relative;
         max-width: 1000px;
         margin: auto;
-        padding: $padding-xl 100px;
+        padding: $padding-xxl;
         min-height: calc(100vh - 300px);
   
         @media only screen and (max-width: $tablet-sm) {
-          padding-left: 50px;
-          padding-right: 50px;
+          padding: $padding-lg $padding-xl;
         }
   
         @media only screen and (max-width: $mobile) {
@@ -86,18 +85,18 @@ defineProps({
   
         .back-button {
           position: absolute;
-          top: 40px;
-          left: 100px;
+          top: $margin-xl;
+          left: $margin-xxl;
           color: $secondary;
           text-decoration: none;
           font-weight: $font-medium;
   
           @media only screen and (max-width: $tablet-sm) {
-            left: 50px;
+            left: $margin-xl;
           }
   
           @media only screen and (max-width: $mobile) {
-            left: 20px;
+            left: $margin;
           }
         }
   
