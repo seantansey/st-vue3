@@ -7,8 +7,8 @@
 
   onMounted(async () => {
     const { token } = await getAccessToken({
-      username: 'mockUsername',
-      password: 'mockPassword'
+      username: 'admin',
+      password: import.meta.env.VITE_NODE_API_PASSWORD
     })
     if (token) store.setBearerToken(token);
   })
