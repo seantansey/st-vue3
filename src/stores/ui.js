@@ -4,6 +4,7 @@ import { ref } from "vue";
 export const useUIStore = defineStore("ui", () => {
   const menuOpen = ref(false);
   const navbarVisible = ref(false);
+  const bearerToken = ref(null);
 
   const closeMenu = () => {
     menuOpen.value = false;
@@ -21,12 +22,18 @@ export const useUIStore = defineStore("ui", () => {
     navbarVisible.value = false;
   }
 
+  const setBearerToken = (token) => {
+    bearerToken.value = token
+  }
+
   return {
     menuOpen,
     closeMenu,
     openMenu,
     navbarVisible,
     showNavbar,
-    hideNavbar
+    hideNavbar,
+    bearerToken,
+    setBearerToken
   };
 });
