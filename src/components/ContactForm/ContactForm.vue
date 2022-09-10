@@ -48,42 +48,43 @@ const submitForm = async () => {
 <template>
   <form @submit.prevent="submitForm" class="contact-form">
     <div class="form-input">
+      <label :class="{ complete: formData.name }">Name</label>
       <input
         v-model="formData.name"
         type="text"
         placeholder="John Doe"
-        :class="{ complete: formData.name }"
         maxlength="100"
       />
-      <label>Name</label>
+      <div class="character-count">{{ formData.name.length }}/100</div>
     </div>
     <div class="form-input">
+      <label :class="{ complete: formData.email }">Email</label>
       <input
         v-model="formData.email"
         type="email"
         placeholder="john.doe@example.com"
-        :class="{ complete: formData.email }"
         maxlength="100"
       />
-      <label>Email</label>
+      <div class="character-count">{{ formData.email.length }}/100</div>
     </div>
     <div class="form-input">
+      <label :class="{ complete: formData.subject }">Subject</label>
       <input
         v-model="formData.subject"
         type="text"
         placeholder="Subject"
-        :class="{ complete: formData.subject }"
         maxlength="100"
       />
-      <label>Subject</label>
+      <div class="character-count">{{ formData.subject.length }}/100</div>
     </div>
     <div class="form-input">
+      <label :class="{ complete: formData.message }">Message</label>
       <textarea
         v-model="formData.message"
         placeholder="Brief description of the services you are looking for..."
-        :class="{ complete: formData.message }"
+        maxlength="1000"
       ></textarea>
-      <label>Message</label>
+      <div class="character-count">{{ formData.message.length }}/1000</div>
     </div>
     <div class="button-row">
       <transition name="fade">
@@ -109,8 +110,9 @@ const submitForm = async () => {
 
   .form-input {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin-bottom: $margin;
+    position: relative;
 
     label {
       display: block;
@@ -118,10 +120,10 @@ const submitForm = async () => {
       margin-bottom: $margin-xs;
       font-weight: $font-bold;
       color: $quaternary;
-    }
 
-    textarea + label {
-      margin-bottom: $margin-sm;
+      &.complete {
+        color: $secondary;
+      }
     }
 
     input,
@@ -140,6 +142,7 @@ const submitForm = async () => {
       font-family: inherit;
       min-height: 200px;
       border: 1px solid $border-color;
+      margin-top: $margin-xs;
     }
 
     ::placeholder {
@@ -153,9 +156,19 @@ const submitForm = async () => {
       border-color: $secondary;
     }
 
-    input.complete + label,
-    textarea.complete + label {
-      color: $secondary;
+    .character-count {
+      display: none;
+      position: absolute;
+      bottom: -$margin;
+      right: 0;
+      font-size: $font-size-xs;
+      color: $quaternary;
+      text-align: right;
+    }
+
+    input:focus + .character-count,
+    textarea:focus + .character-count {
+      display: block;
     }
   }
 
@@ -164,18 +177,19 @@ const submitForm = async () => {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    margin-top: $margin-lg;
 
     .success {
       color: $secondary;
       font-size: $font-size-sm;
-      font-weight: $font-bold;
+      font-weight: $font-medium;
       margin-right: $margin;
     }
 
     .error {
       color: $error;
       font-size: $font-size-sm;
-      font-weight: $font-bold;
+      font-weight: $font-medium;
       margin-right: $margin;
     }
 
