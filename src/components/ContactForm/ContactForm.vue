@@ -82,9 +82,9 @@ const submitForm = async () => {
       <textarea
         v-model="formData.message"
         placeholder="Brief description of the services you are looking for..."
-        maxlength="1000"
+        maxlength="2000"
       ></textarea>
-      <div class="character-count">{{ formData.message.length }}/1000</div>
+      <div class="character-count">{{ formData.message.length }}/2000</div>
     </div>
     <div class="button-row">
       <transition name="fade">
