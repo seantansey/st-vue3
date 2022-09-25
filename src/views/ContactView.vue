@@ -1,6 +1,17 @@
 <script setup>
 import PageTemplate from "../components/shared/PageTemplate.vue";
 import ContactForm from "../components/ContactForm/ContactForm.vue";
+import { useHead } from "@vueuse/head"
+
+useHead({
+  title: 'Contact | seantansey.com',
+  meta: [
+    {
+      name: 'description',
+      content: 'Interested in working together? Have a question? Contact me through any of the means below!'
+    }
+  ]
+})
 </script>
 
 <template>
