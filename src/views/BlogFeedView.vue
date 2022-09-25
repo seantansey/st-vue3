@@ -3,6 +3,17 @@ import { onMounted, reactive } from "vue";
 import BlogCard from "../components/BlogCard/BlogCard.vue";
 import PageTemplate from "../components/shared/PageTemplate.vue";
 import { getAllBlogPosts } from "../dataloaders/blog.js";
+import { useHead } from "@vueuse/head"
+
+useHead({
+  title: 'Blog | seantansey.com',
+  meta: [
+    {
+      name: 'description',
+      content: "A collection of articles I've written on various web development concepts."
+    }
+  ]
+})
 
 const posts = reactive([]);
 

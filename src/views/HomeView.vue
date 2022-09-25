@@ -1,3 +1,17 @@
+<script setup>
+  import { useHead } from "@vueuse/head"
+
+  useHead({
+    title: 'Home | seantansey.com',
+    meta: [
+      {
+        name: 'description',
+        content: 'Helping people turn their ideas into elegant and effective digital solutions.'
+      }
+    ]
+  })
+</script>
+
 <template>
   <main class="home">
     <font-awesome-icon

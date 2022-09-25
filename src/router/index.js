@@ -7,11 +7,6 @@ import HomeView from "../views/HomeView.vue";
 // this generates a separate chunk (About.[hash].js) for this route
 // which is lazy-loaded when the route is visited.
 
-export const metaTitle = (str) => {
-  const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
-  return `${capitalized} | seantansey.com`;
-};
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -53,10 +48,6 @@ const router = createRouter({
 
 router.afterEach((to) => {
   if (to.name !== "blog-post") trackPageView(to.name, to.path || to.fullPath);
-
-  nextTick(() => {
-    document.title = metaTitle(to.name);
-  });
 });
 
 export default router;

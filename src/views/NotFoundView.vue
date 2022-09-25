@@ -1,3 +1,17 @@
+<script setup>
+  import { useHead } from "@vueuse/head"
+
+useHead({
+  title: 'Page Not Found | seantansey.com',
+  meta: [
+    {
+      name: 'description',
+      content: 'Page not found'
+    }
+  ]
+})
+</script>
+
 <template>
   <section class="page-not-found">
     <h1>404</h1>
