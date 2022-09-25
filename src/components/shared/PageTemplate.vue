@@ -19,7 +19,7 @@ defineProps({
       <NavBar />
     </header>
     <div class="content-container">
-      <img class="background-image" src="@/assets/img/circle-nodes-solid.svg" />
+      <img class="background-image" src="@/assets/img/circle-nodes-solid.svg" alt="Website background image"/>
       <transition name="fade" appear>
         <div class="page-transition-container">
           <main>
