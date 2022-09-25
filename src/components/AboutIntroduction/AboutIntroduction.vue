@@ -23,7 +23,7 @@
         </p>
       </div>
       <div class="intro-image">
-        <img src="@/assets/img/denver_headshot.jpg" />
+        <img src="@/assets/img/denver_headshot.jpg" alt="Sean Tansey headshot"/>
       </div>
     </div>
   </section>
