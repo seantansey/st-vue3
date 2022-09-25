@@ -10,10 +10,15 @@ const links = ref(["about", "blog", "contact"]);
 let pageScrolled = ref(false);
 
 const routeTo = (route) => {
-  closeMenu();
   router.push({ name: route });
+  closeMenu();
   if (route === 'home') store.hideNavbar()
 };
+
+const href = (link) => {
+  if (link === 'blog') return '/blog/feed'
+  return '/' + link
+}
 
 const closeMenu = () => store.closeMenu();
 
@@ -53,7 +58,7 @@ onUnmounted(() => {
     <div class="navbar" :class="{ 'navbar-shadow': pageScrolled }">
       <div class="navbar-left">
         <div class="website-logo-wrapper">
-          <a @click="routeTo('home')" class="website-logo">
+          <a @click.prevent="routeTo('home')" class="website-logo" href="/">
             <div class="website-logo-text-inner">ST</div>
           </a>
         </div>
@@ -94,9 +99,10 @@ onUnmounted(() => {
           <a
             v-for="link in links"
             :key="link"
-            @click="routeTo(link)"
+            @click.prevent="routeTo(link)"
             class="router-link"
             :class="{ 'router-link-active': checkActiveRoute(link) }"
+            :href="href(link)"
           >
             {{ link }}
           </a>

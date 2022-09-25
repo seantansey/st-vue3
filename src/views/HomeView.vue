@@ -35,8 +35,8 @@
         Need a website or app? Not sure how to get started? Let's chat!
       </p>
       <div class="button-row">
-        <router-link :to="{ name: 'about' }" class="learn-more">
-          Learn more
+        <router-link :to="{ name: 'about' }" class="about">
+          About Me
         </router-link>
         <router-link :to="{ name: 'contact' }" class="contact">
           Contact
@@ -193,7 +193,7 @@
         text-decoration: none;
       }     
 
-      .learn-more {
+      .about {
         border: 1px solid $secondary;
         color: $white;
         background: $button-primary-bg;
