@@ -3,7 +3,6 @@ import { onMounted, reactive, computed } from "vue";
 import PageTemplate from "../components/shared/PageTemplate.vue";
 import { getBlogPostBySlug } from "../dataloaders/blog.js";
 import { useRoute, useRouter } from "vue-router";
-import { trackPageView } from "../utils/googleAnalytics.js";
 import { useHead } from "@vueuse/head"
 
 const route = useRoute();
@@ -26,7 +25,6 @@ onMounted(async () => {
     return;
   }
 
-  trackPageView(article.title, id);
   post.body = article.body_html;
   post.cover = article.cover_image;
   post.description = article.description

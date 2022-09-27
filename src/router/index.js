@@ -1,6 +1,4 @@
-import { nextTick } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
-import { trackPageView } from "../utils/googleAnalytics";
 import HomeView from "../views/HomeView.vue";
 
 // route level code-splitting
@@ -44,10 +42,6 @@ const router = createRouter({
   scrollBehavior() {
     return { top: 0 }
   },
-});
-
-router.afterEach((to) => {
-  if (to.name !== "blog-post") trackPageView(to.name, to.path || to.fullPath);
 });
 
 export default router;
