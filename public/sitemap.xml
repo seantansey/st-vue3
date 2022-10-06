@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.seantansey.com/</loc>
+  </url>
+  <url>
+    <loc>https://www.seantansey.com/about</loc>
+  </url>
+  <url>
+    <loc>https://www.seantansey.com/blog/feed</loc>
+  </url>
+   <url>
+    <loc>https://www.seantansey.com/blog/algorithms-breadth-first-search-2eif</loc>
+  </url>
+   <url>
+    <loc>https://www.seantansey.com/blog/algorithms-depth-first-search-javascript-37oj</loc>
+  </url>
+   <url>
+    <loc>https://www.seantansey.com/blog/data-structures-stacks-and-queues-90n</loc>
+  </url>
+   <url>
+    <loc>https://www.seantansey.com/blog/javascript-linked-lists-pt-1-7na</loc>
+  </url>
+   <url>
+    <loc>https://www.seantansey.com/blog/postgres-setup-basics-1o37</loc>
+  </url>
+   <url>
+    <loc>https://www.seantansey.com/blog/eli5-dependency-injection-javascript-i1d</loc>
+  </url>
+   <url>
+    <loc>https://www.seantansey.com/blog/javascript-the-event-loop-28i6</loc>
+  </url>
+   <url>
+    <loc>https://www.seantansey.com/contact</loc>
+  </url>
+</urlset>
