@@ -5,6 +5,8 @@ const fetchMessage = (params) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "x-api-key": import.meta.env.VITE_NODE_API_KEY,
+      "x-app-id": import.meta.env.VITE_NODE_API_APP_ID
     },
     body: JSON.stringify(params),
   });

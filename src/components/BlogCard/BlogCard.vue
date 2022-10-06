@@ -39,7 +39,7 @@ const date = computed(() => {
     <div class="image-container">
       <router-link :to="{ name: 'blog-post', params: { id: slug } }">
         <div class="image-overlay-container">
-          <img :src="img" />
+          <img :src="img" alt="Blog post image" />
           <div class="image-overlay"></div>
         </div>
       </router-link>

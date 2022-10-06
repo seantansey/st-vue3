@@ -1,10 +1,9 @@
 <script setup>
-import { onMounted, reactive } from "vue";
+import { onMounted, reactive, computed } from "vue";
 import PageTemplate from "../components/shared/PageTemplate.vue";
 import { getBlogPostBySlug } from "../dataloaders/blog.js";
-import { metaTitle } from "../router";
 import { useRoute, useRouter } from "vue-router";
-import { trackPageView } from "../utils/googleAnalytics.js";
+import { useHead } from "@vueuse/head"
 
 const route = useRoute();
 const router = useRouter();
@@ -12,14 +11,9 @@ const router = useRouter();
 const post = reactive({
   body: "",
   cover: "",
+  description: "",
   title: "",
   url: "",
-});
-
-defineProps({
-  slug: {
-    type: String,
-  },
 });
 
 onMounted(async () => {
@@ -31,20 +25,29 @@ onMounted(async () => {
     return;
   }
 
-  trackPageView(article.title, id);
-  document.title = metaTitle(article.title);
   post.body = article.body_html;
   post.cover = article.cover_image;
+  post.description = article.description
   post.title = article.title;
   post.url = article.url;
 });
+
+useHead({
+  title: computed(() => `${post.title} | seantansey.com`),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => post.description)
+    }
+  ]
+})
 </script>
 
 <template>
   <PageTemplate back-button>
     <article class="blog-post">
       <h1><span class="fwd-slash">/</span>{{ post.title }}</h1>
-      <img :src="post.cover" />
+      <img :src="post.cover" alt="Blog post image"/>
       <p>
         Article sourced from dev.to via the dev.to API. View the original
         article @: <a :href="post.url" target="_blank">{{ post.url }}</a>
