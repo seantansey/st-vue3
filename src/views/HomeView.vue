@@ -29,11 +29,7 @@
         </div>
     </div>
       <h1 class="text-1">seantansey.com</h1>
-      <p>
-        Helping people turn their ideas into elegant and effective digital
-        solutions.<br />
-        Need a website or app? Not sure how to get started? Let's chat!
-      </p>
+      <p>Helping people turn their ideas into elegant and effective digital solutions</p>
       <div class="button-row">
         <router-link :to="{ name: 'about' }" class="about">
           About Me
@@ -165,6 +161,7 @@
     }
 
     p {
+      font-size: $font-size-lg;
       text-align: center;
       color: $tertiary;
       margin: $margin 0;

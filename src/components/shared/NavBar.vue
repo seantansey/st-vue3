@@ -132,8 +132,8 @@ onUnmounted(() => {
     align-items: center;
     justify-content: space-between;
     height: $navbar-height;
-    padding-left: $padding;
-    padding-right: $padding;
+    padding-left: $padding-lg;
+    padding-right: $padding-lg;
     font-weight: $font-medium;
 
     .navbar-left {
@@ -164,7 +164,7 @@ onUnmounted(() => {
             position: absolute;
             bottom: 0;
             right: 5px;
-            font-size: $font-size-lg;
+            font-size: 20px;
             font-weight: $font-bold;
           }
         }
@@ -183,7 +183,6 @@ onUnmounted(() => {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: $margin-sm;
 
       @media only screen and (max-width: $tablet-sm) {
         display: none;
