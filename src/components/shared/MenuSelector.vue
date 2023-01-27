@@ -101,7 +101,7 @@ const select = (index) => {
         justify-content: center;
         align-items: center;
         font-weight: $font-medium;
-        border-right: 2px solid $tertiary;
+        border-right: 2px solid $bg-secondary;
         transition: all 0.3s linear;
         color: $tertiary;
         padding: $padding;
@@ -123,7 +123,7 @@ const select = (index) => {
 
     .menu-content {
       flex: 2;
-      margin-left: $margin-lg;
+      margin-left: $margin-xl;
     }
   }
 

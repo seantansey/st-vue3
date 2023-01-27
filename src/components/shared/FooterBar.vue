@@ -4,7 +4,7 @@
     <p><router-link :to="{ name: 'home' }">seantansey.com</router-link> designed & developed by Sean Tansey</p>
     <div class="social-wrapper">
       <router-link :to="{ name: 'contact' }">
-        <font-awesome-icon icon="fa-solid fa-envelope" size="lg" />
+        <font-awesome-icon icon="fa-solid fa-paper-plane" size="lg" />
       </router-link>
       <a href="https://www.linkedin.com/in/seantansey/" target="_blank">
         <font-awesome-icon icon="fa-brands fa-linkedin-in" size="lg" />
@@ -40,7 +40,7 @@
 
   p {
     margin: $margin-xs 0;
-    color: $tertiary;
+    color: $quaternary;
     text-align: center;
 
     a {

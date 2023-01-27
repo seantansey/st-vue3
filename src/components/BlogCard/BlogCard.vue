@@ -91,7 +91,7 @@ const date = computed(() => {
         width: 100%;
         height: 100%;
         background: $secondary;
-        opacity: .08;
+        opacity: .05;
 
         &:hover {
           opacity: 0;
