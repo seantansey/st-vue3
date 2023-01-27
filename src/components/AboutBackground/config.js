@@ -1,11 +1,20 @@
 export default {
     background: [
     {
-        title: "Software Engineer",
-        company: "S&P Global",
-        text: "I've worked at S&P Global (formerly IHS Markit) since late 2020, building and maintaining websites for multiple major clients in the financial industry. Fortunate to work with some pretty bright people I've learned a lot about writing cleaner, testable, and maintainable code. I've become a much more polished developer during my time here.",
+        title: "Software Development Engineer",
+        company: "Zoom",
+        text: "I currently work at Zoom as part of the Frontend Development team focused on building new features for Zoom's Contact Center product.",
         dates: [
             'Present',
+            'Nov. 2022'
+        ]
+    },
+    {
+        title: "Software Engineer",
+        company: "S&P Global",
+        text: "I worked at S&P Global (formerly IHS Markit) for a little over 2 years, building and maintaining websites for multiple clients in the financial industry. Fortunate to work with some pretty bright people I learned a lot about writing cleaner, more testable, and maintainable code. I became a much more polished developer during my time here.",
+        dates: [
+            'Nov. 2022',
             'Oct. 2020'
         ]
     },

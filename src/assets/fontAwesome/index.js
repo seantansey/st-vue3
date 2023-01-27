@@ -10,7 +10,8 @@ import {
   faXmark,
   faCircleNodes,
   faChevronLeft,
-  faChevronDown
+  faChevronDown,
+  faPaperPlane
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -34,7 +35,8 @@ library.add(
   faXmark,
   faCircleNodes,
   faChevronLeft,
-  faChevronDown
+  faChevronDown,
+  faPaperPlane
 );
 
 export default FontAwesomeIcon;

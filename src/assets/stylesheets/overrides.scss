@@ -24,7 +24,7 @@ h1 {
 }
 
 p {
-  line-height: $font-size-lg;
+  line-height: rem-calc(20);
 }
 
 input, textarea {

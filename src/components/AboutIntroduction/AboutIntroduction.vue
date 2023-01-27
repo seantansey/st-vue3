@@ -4,7 +4,7 @@
     <div class="flex-row">
       <div class="intro-content">
         <h3>
-          Hi, I'm Sean Tansey. A Fullstack Software Engineer specializing in
+          Hi, I'm Sean Tansey. A Software Engineer specializing in
           Frontend Development based out of Denver, Colorado. 
         </h3>
         <p>I enjoy building solutions for complex problems.</p>
@@ -15,11 +15,10 @@
           Vue, React and Svelte.
         </p>
         <p>
-          Currently employed at
-          <a href="https://ihsmarkit.com/index.html" target="_blank"
-            >S&P Global</a
-          >, where I build and maintain UI's for multiple large clients in the
-          financial industry.
+          As a firm believer in constant progression and lifelong learning, I am constantly
+          challenging my understanding, honing my craft and working to better myself as a developer and person.
+          A principle thats as applicable to my career as it is my hobbies (where you'll find me snowboarding,
+          fishing, or practicing my skills as a amatuer "pizzaiolo" tossing pizzas in the air with my friends). 
         </p>
       </div>
       <div class="intro-image">
